@@ -8,7 +8,7 @@ import java.util.*;
  * Fall 2017
  *
  */
-public class pa1 {
+public class psychicoptimal {
 
     public static void main(String[] args) {
 
@@ -34,7 +34,20 @@ public class pa1 {
 
             pw.println(numTickets);
 
+            ArrayList<String> bestSetsSorted = new ArrayList<String>();
 
+            for(int i = 0; i < bestSets.size(); i ++){
+                bestSetsSorted.add(bestSets.get(i).toString());
+            }
+            Collections.sort(bestSetsSorted);
+
+            for(int i = 0; i < bestSetsSorted.size(); i++) {
+                String temp = bestSetsSorted.get(i).replaceAll("(\\[|,|\\])","");
+                pw.println(temp);
+            }
+
+
+            /*
             for(int i = 0; i < bestSets.size(); i++) {
                 Object[] temp = new Object[bestSets.get(i).size()];
                 bestSets.get(i).toArray(temp);
@@ -45,6 +58,7 @@ public class pa1 {
                 }
                 pw.println();
             }
+            */
 
             br.close();
             pw.close();
